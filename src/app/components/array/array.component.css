@@ -1,0 +1,18 @@
+.myColor {
+  color:red;
+}
+
+div.style {
+  font-size: 18px;
+}
+
+.myClass {
+  font-size: 50px;
+  /*text-transform: capitalize; */
+  text-transform: uppercase;
+  color:slateblue;
+}
+
+.myClass2{
+  color: salmon;
+}
