@@ -12,4 +12,8 @@ export class EventsComponent implements OnInit {
   ngOnInit() {
   }
 
+  myClick(arugss) {
+    console.log(arugss);
+  }
+
 }
