@@ -1,7 +1,14 @@
 <h1 [class.myClass]="totalClass">
-  array works!
+  {{'array works!' | uppercase }} <br>
   {{ people }} <br>
-
+  {{ 'Seever Sarkawt' | uppercase }} <br>
+  {{ 'Seever Sarkawt' | lowercase }} <br>
+  {{ birthday | date | uppercase }} <br>
+  {{ birthday | date:"MM-dd-yyyy" }} <br>
+  {{ mySalary | currency }} <br>
+  {{ mySalary | currency:"GBP" }} <br>
+  {{ mySalary | currency:"USD" }} <br>
+  {{ Rate | percent }} <br>
   <img src="{{ myImage }}" alt=""> <br>
   <img [src]="myImage" alt=""> <br>
   <img bind-src="myImage" alt=""> <br>
@@ -9,7 +16,7 @@
 
   <div [ngSwitch]="myNumber">
     <p *ngSwitchCase="100">Sivar True</p>
-    <p *ngSwitchCase="200">200 Returns</p>
+    <p *ngSwitchCase="200">200 Returnss</p>
     <p *ngSwitchCase="300">300 Returns</p>
     <p *ngSwitchCase="400">400 Returns</p>
     <p *ngSwitchCase="500">500 Returns</p>

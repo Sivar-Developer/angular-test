@@ -11,11 +11,15 @@ export class ArrayComponent implements OnInit {
   sultan:boolean=true;
   myNumber:number=600;
   myClassCss:boolean=false;
+  myClassCss2:boolean=true;
+  birthday:date= new Date(1995, 6, 6);
+  mySalary=4000;
+  Rate=44.54;
   totalClass={}
   classFunction(){
     this.totalClass{
-      myClassCss=true,
-      myClassCss2=true
+      this.myClassCss=true,
+      this.myClassCss2=true
     }
   }
   myImage:string="http://via.placeholder.com/350x150/0000/0000";
@@ -42,7 +46,7 @@ export class ArrayComponent implements OnInit {
       shortcut:'Rb',
       city:'Anywhere'
     },
-  ]
+  ];
 
   constructor() { }
 

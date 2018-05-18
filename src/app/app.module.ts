@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { SivarComponent } from './sivar/sivar.component';
 import { HomeComponent } from './components/home/home.component';
 import { ArrayComponent } from './components/array/array.component';
+import { EventsComponent } from './components/events/events.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SivarComponent,
     HomeComponent,
-    ArrayComponent
+    ArrayComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule

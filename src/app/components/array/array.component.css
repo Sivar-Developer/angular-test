@@ -9,7 +9,7 @@ div.style {
 .myClass {
   font-size: 50px;
   /*text-transform: capitalize; */
-  text-transform: uppercase;
+  /*text-transform: uppercase; */
   color:slateblue;
 }
 
