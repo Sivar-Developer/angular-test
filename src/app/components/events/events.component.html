@@ -1,3 +1,10 @@
 <p>Works!</p>
 
-<button (click)="myClick('Seever Sarkawt')">Click me</button>
+<button (click)="myClick($event,'Seever Sarkawt')">Click me</button> <br>
+<button (mousedown)="myClick($event,'Seever Sarkawt')">Click me 2</button> <br>
+<button (mouseup)="myClick($event,'Seever Sarkawt')">Click me 3</button> <br>
+<button (mouseover)="myClick($event,'Seever Sarkawt')">Click me 4</button> <br>
+<p (drag)="myClick($event,'Seever Sarkawt')">Click me 5</p> <br>
+<button (dblclick)="myClick($event,'Seever Sarkawt')">Click me 6</button> <br>
+<p (dragover)="myClick($event,'Seever Sarkawt')">Click me 5</p> <br>
+<p>Drang Text</p>
