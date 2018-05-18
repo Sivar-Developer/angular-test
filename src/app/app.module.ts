@@ -6,6 +6,7 @@ import { SivarComponent } from './sivar/sivar.component';
 import { HomeComponent } from './components/home/home.component';
 import { ArrayComponent } from './components/array/array.component';
 import { EventsComponent } from './components/events/events.component';
+import { CeventsComponent } from './components/cevents/cevents.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { EventsComponent } from './components/events/events.component';
     SivarComponent,
     HomeComponent,
     ArrayComponent,
-    EventsComponent
+    EventsComponent,
+    CeventsComponent
   ],
   imports: [
     BrowserModule
