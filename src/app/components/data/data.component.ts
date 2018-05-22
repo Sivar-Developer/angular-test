@@ -8,13 +8,17 @@ import { DataService } from '../../services/data.service';
 })
 export class DataComponent implements OnInit {
 
-  users:string[];
+  users:any[]=[];
 
   constructor(public dataService:DataService) {
-    this.users=this.dataService.getUsers();    
+      this.dataService.getUsers().subscribe(data=>{
+        this.users.push(data);
+      });
    }
 
   ngOnInit() {
   }
+
+  // this.users=this.dataService.getUsers();  
 
 }
