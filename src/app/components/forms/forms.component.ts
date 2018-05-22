@@ -7,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormsComponent implements OnInit {
 
-  //name:string="Your first name";
-  lname:string="Your last name";
+  verifyForm = {};
+  name:string="";
+  lname:string="";
   age:number=0;
 
-  name:string="";
+  //name:string="";
   myShop:string[]=['apple','orange','banana'];
 
   constructor() { }
@@ -19,9 +20,17 @@ export class FormsComponent implements OnInit {
   ngOnInit() {
   }
 
-  mySubmit() {
-    this.myShop.push(this.name);
-    this.name="";
+  // mySubmit() {
+  //   this.myShop.push(this.name);
+  //   this.name="";
+  // }
+
+  mySubmit({value, valid}) {
+    if(valid) {
+      this.verifyForm=value;
+    } else {
+      this.verifyForm="Not Valid";
+    }
   }
 
 }

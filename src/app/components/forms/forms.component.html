@@ -1,25 +1,54 @@
 <div class="col-md-6 offset-md-3 padding">
-<form (submit)="mySubmit()">
+<form novalidate #fo="ngForm" (submit)="mySubmit(fo)">
   <div class="form-group">
     <label for="name">First Name:</label>
-    <input type="name" class="form-control" [(ngModel)]="name" name="name" id="name">
+    <input type="name" class="form-control" [(ngModel)]="name" #myName="ngModel" required minlength="4" name="name" id="name">
   </div>
-<!--  <div class="form-group">
+  <div class="form-group">
     <label for="lname">Last Name:</label>
-    <input type="text" class="form-control" [(ngModel)]="lname" name="lname" id="lname">
+    <input type="text" class="form-control" [(ngModel)]="lname" #myLname="ngModel" required minlength="4" name="lname" id="lname">
   </div>
   <div class="form-group">
     <label for="age">Age:</label>
-    <input type="number" class="form-control" [(ngModel)]="age" name="age" id="age">
-  </div>  -->
+    <input type="number" class="form-control" [(ngModel)]="age" #myAge="ngModel" required minlength="2" name="age" id="age">
+  </div>  
   <button type="submit" class="btn btn-default">Submit</button>
+
+  <!-- Validations -->
+  <div *ngIf="myName.errors?.required && myName.touched" class="alert alert-danger">
+    First name is required    
+  </div>
+  <div *ngIf="myName.errors?.minlength && myName.touched" class="alert alert-danger">
+      Min required 4 chars for First name  
+  </div>
+
+  <div *ngIf="myLname.errors?.required && myLname.touched" class="alert alert-danger">
+      Last name is required    
+  </div>
+  <div *ngIf="myLname.errors?.minlength && myLname.touched" class="alert alert-danger">
+      Min required 4 chars for Last name  
+  </div>
+
+  <div *ngIf="myAge.errors?.required && myAge.touched" class="alert alert-danger">
+      Age is required    
+  </div>
+  <div *ngIf="myAge.errors?.minlength && myAge.touched" class="alert alert-danger">
+      Min required 2 numbers for Age  
+  </div>
+
 </form>
 
+<div class="container">
+  <h4>Full Name : {{ name }} {{ lname }}</h4>
+  <h4>Age : {{ age }}</h4><br>
+  <div *ngIf="verifyForm" class="alert alert-warning">{{ verifyForm | json }}</div>
+</div>
+
+<!--
 <div class="container">
   <div *ngFor="let item of myShop">
     <h3>{{ item }}</h3><br>
   </div>
-  <!-- <h3>{{ lname }}</h3><br>
-  <h3>{{ age }}</h3><br>  -->
-</div>
-</div>
+  < <h3>{{ lname }}</h3><br>
+  <h3>{{ age }}</h3><br>  
+</div> -->
