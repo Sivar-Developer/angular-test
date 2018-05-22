@@ -1,3 +1,4 @@
+import { DataService } from './services/data.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -9,6 +10,7 @@ import { ArrayComponent } from './components/array/array.component';
 import { EventsComponent } from './components/events/events.component';
 import { CeventsComponent } from './components/cevents/cevents.component';
 import { FormsComponent } from './components/forms/forms.component';
+import { DataComponent } from './components/data/data.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,14 @@ import { FormsComponent } from './components/forms/forms.component';
     ArrayComponent,
     EventsComponent,
     CeventsComponent,
-    FormsComponent
+    FormsComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
