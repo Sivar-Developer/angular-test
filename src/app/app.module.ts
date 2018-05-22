@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SivarComponent } from './sivar/sivar.component';
@@ -7,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ArrayComponent } from './components/array/array.component';
 import { EventsComponent } from './components/events/events.component';
 import { CeventsComponent } from './components/cevents/cevents.component';
+import { FormsComponent } from './components/forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { CeventsComponent } from './components/cevents/cevents.component';
     HomeComponent,
     ArrayComponent,
     EventsComponent,
-    CeventsComponent
+    CeventsComponent,
+    FormsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
