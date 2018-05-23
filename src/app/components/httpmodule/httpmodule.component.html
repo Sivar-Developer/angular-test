@@ -1,0 +1,22 @@
+<h1>Users List : From REST API</h1>
+<div class="container padding">
+  <div class="row">
+  <div class="card border-dark col-md-3 mt-10 ml-15" *ngFor="let user of users[0]">
+  <div class="card-header"><b>Username: {{ user.username }}</b></div>
+  <div class="card-body text-dark">
+    <p class="card-text"><b>Name: </b>{{ user.name }}</p>
+    <p class="card-text"><b>Email: </b>{{ user.email }}</p>
+    <p class="card-text"><b>Phone: </b>{{ user.phone }}</p>
+    <p class="card-text"><b>Website: </b>{{ user.website }}</p>
+    <div class="card-text">
+       <ul><b>Address</b>
+         <li><b>Street: </b>{{ user.address.street }}</li>
+         <li><b>Suite: </b>{{ user.address.suite }}</li>
+         <li><b>City: </b>{{ user.address.city }}</li>
+         <li><b>Geo Location: </b> Lat:{{ user.address.geo.lat }} , Long:{{ user.address.geo.lng }}</li>
+       </ul>
+      </div>
+  </div>
+</div>
+</div>
+</div>
