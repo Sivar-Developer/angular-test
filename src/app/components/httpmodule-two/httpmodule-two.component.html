@@ -1,0 +1,57 @@
+<div class="container padding">
+  <div class="row">
+  <div class="card border-dark col-md-3 mt-10 ml-15" *ngFor="let user of users">
+  <div class="card-header"><b>Username: {{ user.username }}</b></div>
+  <div class="card-body text-dark">
+    <p class="card-text"><b>Name: </b>{{ user.name }}</p>
+    <p class="card-text"><b>Email: </b>{{ user.email }}</p>
+    <p class="card-text"><b>Phone: </b>{{ user.phone }}</p>
+    <p class="card-text"><b>Website: </b>{{ user.website }}</p>
+    <div class="card-text">
+       <ul><b>Address</b>
+         <li><b>Street: </b>{{ user.address.street }}</li>
+         <li><b>Suite: </b>{{ user.address.suite }}</li>
+         <li><b>City: </b>{{ user.address.city }}</li>
+         <li><b>Geo Location: </b> Lat:{{ user.address.geo.lat }} , Long:{{ user.address.geo.lng }}</li>
+       </ul>
+      </div>
+  </div>
+</div>
+</div><hr><br>
+  <form (submit)="mySubmit()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="name" class="form-control" [(ngModel)]="user.name" #myName="ngModel" required minlength="4" name="name" id="name">
+    </div>
+    <div class="form-group">
+      <label for="username">User Name:</label>
+      <input type="text" class="form-control" [(ngModel)]="user.username" #myLname="ngModel" required minlength="4" name="username" id="username">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" [(ngModel)]="user.email" #myAge="ngModel" required minlength="2" name="email" id="email">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+    <!-- Validations -->
+    <div *ngIf="myName.errors?.required && myName.touched" class="alert alert-danger">First name is required</div>
+    <div *ngIf="myName.errors?.minlength && myName.touched" class="alert alert-danger">Min required 4 chars for First name</div>
+    <div *ngIf="myLname.errors?.required && myLname.touched" class="alert alert-danger">Last name is required</div>
+    <div *ngIf="myLname.errors?.minlength && myLname.touched" class="alert alert-danger">Min required 4 chars for Last name</div>
+    <div *ngIf="myAge.errors?.required && myAge.touched" class="alert alert-danger">Age is required</div>
+    <div *ngIf="myAge.errors?.minlength && myAge.touched" class="alert alert-danger">Min required 2 numbers for Age</div>
+  </form>
+  <hr><br>
+  <div class="container">
+    <h4>Full Name : {{ user.name }} {{ user.username }}</h4>
+    <h4>Email : {{ user.email }}</h4><br>
+    <div *ngIf="verifyForm" class="alert alert-warning">{{ verifyForm | json }}</div>
+  </div>
+
+  <!--
+  <div class="container">
+    <div *ngFor="let item of myShop">
+      <h3>{{ item }}</h3><br>
+    </div>
+    < <h3>{{ lname }}</h3><br>
+    <h3>{{ age }}</h3><br>
+  </div> -->

@@ -15,6 +15,8 @@ import { CeventsComponent } from './components/cevents/cevents.component';
 import { FormsComponent } from './components/forms/forms.component';
 import { DataComponent } from './components/data/data.component';
 import { HttpmoduleComponent } from './components/httpmodule/httpmodule.component';
+import { FormsTwoComponent } from './components/forms-two/forms-two.component';
+import { HttpmoduleTwoComponent } from './components/httpmodule-two/httpmodule-two.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { HttpmoduleComponent } from './components/httpmodule/httpmodule.componen
     CeventsComponent,
     FormsComponent,
     DataComponent,
-    HttpmoduleComponent
+    HttpmoduleComponent,
+    FormsTwoComponent,
+    HttpmoduleTwoComponent
   ],
   imports: [
     BrowserModule,

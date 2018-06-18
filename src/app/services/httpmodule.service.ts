@@ -8,12 +8,17 @@ import 'rxjs/Rx';   //  npm install rxjs@6 rxjs-compat@6 --save
 })
 export class HttpmoduleService {
 
-  constructor(public http:Http) {
+  constructor(public http: Http) {
    }
 
   getPerson() {
     return this.http.get('https://jsonplaceholder.typicode.com/users')
-    .map(res=>res.json());
+    .map(res => res.json());
+  }
+
+  addPerson(user) {
+    return this.http.post('https://jsonplaceholder.typicode.com/users', user)
+    .map(res => res.json());
   }
 
 }

@@ -6,35 +6,35 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
 
-  data: Observable<any>; 
+  data: Observable<any>;
 
   constructor() { }
 
    getUsers() {
-     this.data = new Observable(observer=>{
-      setTimeout(()=>{
+     this.data = new Observable(observer => {
+      setTimeout(() => {
         observer.next('Sivar Sarkawt');
-      },1000);
+      }, 1000);
 
-      setTimeout(()=>{
+      setTimeout(() => {
         observer.next('Sivan Sarkawt');
-      },2000);
-      
-      setTimeout(()=>{
+      }, 2000);
+
+      setTimeout(() => {
         observer.next('Savan Sarkawt');
-      },3000);
+      }, 3000);
 
-      setTimeout(()=>{
+      setTimeout(() => {
         observer.next('Sia Sarkawt');
-      },4000);
+      }, 4000);
 
-      setTimeout(()=>{
+      setTimeout(() => {
         observer.next('Sazan Qadir');
-      },5000);
+      }, 5000);
 
-      setTimeout(()=>{
+      setTimeout(() => {
         observer.next('Sarkawt Mahmood');
-      },6000);
+      }, 6000);
      });
 
      return this.data;
@@ -44,6 +44,6 @@ export class DataService {
 //   users:string[]=[];
 //   this.users = ['Sivar','Sivan','Savan','Sia'];
 //   return this.users;
-   
-   
+
+
 }

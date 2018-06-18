@@ -8,10 +8,10 @@ import { HttpmoduleService } from './../../services/httpmodule.service';
 })
 export class HttpmoduleComponent implements OnInit {
 
-  users:string[]=[];
+  users: string[] = [];
 
-  constructor(public httpmoduleService:HttpmoduleService) {
-    this.httpmoduleService.getPerson().subscribe(data=>{
+  constructor(public httpmoduleService: HttpmoduleService) {
+    this.httpmoduleService.getPerson().subscribe(data => {
       this.users.push(data);
     });
    }
