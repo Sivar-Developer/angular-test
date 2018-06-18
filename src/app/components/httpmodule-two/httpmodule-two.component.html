@@ -1,6 +1,7 @@
 <div class="container padding">
   <div class="row">
   <div class="card border-dark col-md-3 mt-10 ml-15" *ngFor="let user of users">
+  <div class="card-header"><button class="btn btn-icon btn-danger" (click)="deleteItem(user.id)"><i class="fa fa-trash"></i></button></div>
   <div class="card-header"><b>Username: {{ user.username }}</b></div>
   <div class="card-body text-dark">
     <p class="card-text"><b>Name: </b>{{ user.name }}</p>

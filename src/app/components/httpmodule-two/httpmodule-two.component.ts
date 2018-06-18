@@ -27,6 +27,17 @@ export class HttpmoduleTwoComponent implements OnInit {
     });
   }
 
+  deleteItem(id) {
+    this.dataService.deletePerson(id).subscribe(res => {
+      // console.log(res);
+      for (let i = 0; i < this.users.length; i++) {
+        if (this.users[i].id === id) {
+          this.users.splice(i, 1);
+        }
+      }
+    });
+  }
+
   ngOnInit() {
   }
 

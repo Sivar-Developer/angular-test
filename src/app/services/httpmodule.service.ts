@@ -21,4 +21,9 @@ export class HttpmoduleService {
     .map(res => res.json());
   }
 
+  deletePerson(id) {
+    return this.http.delete('https://jsonplaceholder.typicode.com/users/' + id)
+    .map(res => res.json());
+  }
+
 }
