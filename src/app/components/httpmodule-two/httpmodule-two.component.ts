@@ -10,10 +10,13 @@ export class HttpmoduleTwoComponent implements OnInit {
 
   users: any[];
   user = {
+    id: 0,
     name: '',
     username: '',
     email: ''
   };
+
+  isEditMode = false;
 
   constructor(public dataService: HttpmoduleService) {
     this.dataService.getPerson().subscribe(users => {
@@ -21,10 +24,23 @@ export class HttpmoduleTwoComponent implements OnInit {
     });
    }
 
-  mySubmit() {
-    this.dataService.addPerson(this.user).subscribe(user => {
-      this.users.unshift(user);
-    });
+  mySubmit(isEditMode) {
+    if (isEditMode) {
+      this.dataService.editPerson(this.user).subscribe(user => {
+        // console.log(res);
+        for (let i = 0; i < this.users.length; i++) {
+          if (this.users[i].id === this.user.id) {
+            this.users.splice(i, 1);
+          }
+        }
+        this.users.push(user);
+      });
+    } else {
+      this.dataService.addPerson(this.user).subscribe(user => {
+        this.users.unshift(user);
+      });
+    }
+
   }
 
   deleteItem(id) {
@@ -36,6 +52,11 @@ export class HttpmoduleTwoComponent implements OnInit {
         }
       }
     });
+  }
+
+  editItem(user) {
+    this.isEditMode = true;
+    this.user = user;
   }
 
   ngOnInit() {

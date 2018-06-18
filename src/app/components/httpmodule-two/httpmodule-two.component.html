@@ -1,7 +1,10 @@
 <div class="container padding">
   <div class="row">
   <div class="card border-dark col-md-3 mt-10 ml-15" *ngFor="let user of users">
-  <div class="card-header"><button class="btn btn-icon btn-danger" (click)="deleteItem(user.id)"><i class="fa fa-trash"></i></button></div>
+  <div class="card-header">
+    <button class="btn btn-icon btn-danger" (click)="deleteItem(user.id)"><i class="fa fa-trash"></i></button>
+    <button class="btn btn-icon btn-info ml-2" (click)="editItem(user)"><i class="fa fa-pencil"></i></button>
+  </div>
   <div class="card-header"><b>Username: {{ user.username }}</b></div>
   <div class="card-body text-dark">
     <p class="card-text"><b>Name: </b>{{ user.name }}</p>
@@ -19,7 +22,7 @@
   </div>
 </div>
 </div><hr><br>
-  <form (submit)="mySubmit()">
+  <form (submit)="mySubmit(isEditMode)">
     <div class="form-group">
       <label for="name">Name:</label>
       <input type="name" class="form-control" [(ngModel)]="user.name" #myName="ngModel" required minlength="4" name="name" id="name">

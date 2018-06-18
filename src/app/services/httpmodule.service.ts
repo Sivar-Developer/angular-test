@@ -26,4 +26,10 @@ export class HttpmoduleService {
     .map(res => res.json());
   }
 
+  editPerson(user) {
+    return this.http.put('https://jsonplaceholder.typicode.com/users/' + user.id, user)
+    .map(res => res.json());
+  }
+
+
 }
