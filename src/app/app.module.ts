@@ -20,10 +20,12 @@ import { FormsTwoComponent } from './components/forms-two/forms-two.component';
 import { HttpmoduleTwoComponent } from './components/httpmodule-two/httpmodule-two.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
 
 const appRoute: Routes = [
   {path: '', component: HomeComponent},
   {path: 'profiles', component: ProfileComponent},
+  {path: 'profile/:id', component: UserprofileComponent}
 ];
 
 
@@ -41,7 +43,8 @@ const appRoute: Routes = [
     FormsTwoComponent,
     HttpmoduleTwoComponent,
     ProfileComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserprofileComponent
   ],
   imports: [
     BrowserModule,
