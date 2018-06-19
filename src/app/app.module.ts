@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { SivarComponent } from './sivar/sivar.component';
@@ -17,6 +18,14 @@ import { DataComponent } from './components/data/data.component';
 import { HttpmoduleComponent } from './components/httpmodule/httpmodule.component';
 import { FormsTwoComponent } from './components/forms-two/forms-two.component';
 import { HttpmoduleTwoComponent } from './components/httpmodule-two/httpmodule-two.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
+const appRoute: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'profiles', component: ProfileComponent},
+];
+
 
 @NgModule({
   declarations: [
@@ -30,12 +39,15 @@ import { HttpmoduleTwoComponent } from './components/httpmodule-two/httpmodule-t
     DataComponent,
     HttpmoduleComponent,
     FormsTwoComponent,
-    HttpmoduleTwoComponent
+    HttpmoduleTwoComponent,
+    ProfileComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoute)
   ],
   providers: [
     DataService,
